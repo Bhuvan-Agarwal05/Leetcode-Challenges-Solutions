@@ -1,0 +1,17 @@
+int hammingWeight(uint32_t n) {
+    char str[32];
+    int i=0,count=0,r;
+    
+    while(n!=0)
+    {
+        r=n%2;
+        if(r==1)
+            count++;
+        str[i]=r;
+        n=n/2;
+        i++;
+    }
+  // sprintf(str,"%u",n);
+   
+    return count;
+}

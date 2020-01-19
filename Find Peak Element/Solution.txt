@@ -1,0 +1,39 @@
+    int findPeakElement(int* nums, int numsSize)
+      {
+         int i=0,temp,peak;
+	 peak=0;
+    
+    	 if(numsSize==1)  // If Only One Element Is Present In The List Then it will be Our Peak Element.
+        	return peak;
+    	 else if(nums[peak]>nums[peak+1])  // If First Element is Greater than 2nd element Then Directly we can print it as our peak element.
+        	return peak;
+    	 else
+    	  {
+            for(i=0;i<numsSize;i++)
+             {  
+               temp=i;
+               if(i!=numsSize-1)  // To Check whether our i is at the last index of Our Array
+                 {
+                   if(nums[i+1]>nums[i])
+                     {  
+                       if(nums[peak]>nums[i+1]);
+                       else
+                         peak=i+1;
+                     }
+                   else
+                     { 
+                       if(nums[peak]>nums[i]);
+                       else
+                         peak=i;
+                     }
+                 }
+               else   // If index is at last then, check
+                {
+                   if(nums[i]>nums[i-1])  // If the last element is greater than its previous element, then it will be our peak element.
+                      peak=i;
+                }
+             }
+          }
+
+         return peak;
+      }
